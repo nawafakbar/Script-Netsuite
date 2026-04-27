@@ -30,7 +30,11 @@ define(['N/log', 'N/record', 'N/search', 'N/runtime'], (log, record, search, run
             
             if (!context.end) {
                 results = searchResult.getRange({ start: 0, end: 1000 });
-                end = 1000;
+                if (!results || results.length === 0) {
+                    end = 0;
+                } else {
+                    end = 1000;
+                }
             } else {
                 var start = Number(context.end);
                 end = start + 1000;
@@ -69,6 +73,7 @@ define(['N/log', 'N/record', 'N/search', 'N/runtime'], (log, record, search, run
                 // Karena tidak ada perintah 'return' di blok ini, NetSuite akan melempar 
                 // error 400 "INVALID_RETURN_DATA_FORMAT".
                 log.audit("Selesai", "Seluruh baris data dari " + searchIdTarget + " sudah berhasil ditarik.");
+                return "";
             }
             
         } catch(e) {
