@@ -4,7 +4,7 @@ from requests_oauthlib import OAuth1
 from datetime import datetime
 tanggal_hari_ini = datetime.now().strftime("%Y-%m-%d")
 full_path = rf'D:\BackupNetsuite\budget_number_{tanggal_hari_ini}.csv'
-credentials = { 'account': 'xxxxx-sb1', 'consumer_key': 'xxxxxx', 'consumer_secret': 'xxxxxx', 'token_id': 'xxxxxx', 'token_secret': 'xxxxxxx', 'realm': '8515496_SB1' }
+credentials = { 'account': 'xxxxx', 'consumer_key': 'xxxxxx', 'consumer_secret': 'xxxxxx', 'token_id': 'xxxxxx', 'token_secret': 'xxxxxxx', 'realm': 'xxxxx' }
 url = ""
 end = 0
 for i in range(100):
